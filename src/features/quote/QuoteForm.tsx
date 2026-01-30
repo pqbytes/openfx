@@ -53,7 +53,7 @@ export function QuoteForm({
             onChange={(e) => setDestinationCurrency(e.target.value as Currency)}
             disabled={isLoading}
           >
-            {CURRENCIES.map(c => <option key={c} value={c}>{c}</option>)}
+            {CURRENCIES.filter(c => c !== sourceCurrency).map(c => <option key={c} value={c}>{c}</option>)}
           </select>
         </div>
       </div>
